@@ -1,0 +1,27 @@
+@import "tailwindcss";
+*{
+    color: white;
+}
+
+.navbar{
+    padding: 5px;
+    position: fixed;
+    top: 0%;
+    width: 100%;
+}
+.icons img{
+    width: 20px;
+}
+.bg {
+    background-image: url(./bg.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: aliceblue;
+    background-attachment: fixed;
+    align-content: center;
+}
+.bg_color{
+    background-color: rgb(14, 14, 14);
+}
