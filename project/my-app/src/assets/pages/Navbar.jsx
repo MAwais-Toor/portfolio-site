@@ -13,16 +13,18 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
           {/* Logo */}
-          <div className="text-xl font-bold">MyBrand</div>
+          <div className="text-xl font-bold">Muhammad Awais</div>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex flex-1 justify-center">
             <ul className="flex space-x-4 bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 items-center">
-              <li><NavLink to="/" className="text-white">Home</NavLink></li>
-              <li><NavLink to="/about" className="text-white">About</NavLink></li>
-              <li><NavLink to="/project" className="text-white">Portfolio</NavLink></li>
-              <li><NavLink to="/services" className="text-white">Services</NavLink></li>
-              <li><NavLink to="#contact" className="text-white">Contact</NavLink></li>
+              <li><a href="#home" className="text-white">Home</a></li>
+              <li><a href="#about" className="text-white">About</a></li>
+              <li><a href="#skills" className="text-white">Skills</a></li>
+              <li><a href="/project" className="text-white">Experience</a></li>
+              <li><a href="/services" className="text-white">Projects</a></li>
+              <li><a href="#contact" className="text-white">Education</a></li>
+              <li><a href="#contact" className="text-white">Contact</a></li>
             </ul>
           </div>
 
@@ -74,11 +76,13 @@ export default function Navbar() {
 
           {/* Nav Links */}
           <ul className="flex flex-col space-y-4 text-lg">
-            <li><NavLink to="/" onClick={() => setIsOpen(false)}>Home</NavLink></li>
-            <li><NavLink to="/about" onClick={() => setIsOpen(false)}>About</NavLink></li>
-            <li><NavLink to="/project" onClick={() => setIsOpen(false)}>Portfolio</NavLink></li>
-            <li><NavLink to="/services" onClick={() => setIsOpen(false)}>Services</NavLink></li>
-            <li><NavLink to="#contact" onClick={() => setIsOpen(false)}>Contact</NavLink></li>
+            <li><a href="#home" onClick={() => setIsOpen(false)}>Home</a></li>
+            <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
+            <li><a href="#about" onClick={() => setIsOpen(false)}>Skills</a></li>
+            <li><a href="#about" onClick={() => setIsOpen(false)}>Experience</a></li>
+            <li><a href="#project" onClick={() => setIsOpen(false)}>Projects</a></li>
+            <li><a href="#services" onClick={() => setIsOpen(false)}>Education</a></li>
+            <li><a href="#contact" onClick={() => setIsOpen(false)}>Contact</a></li>
           </ul>
 
           {/* Social Icons in Sidebar */}
