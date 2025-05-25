@@ -3,6 +3,10 @@ import '../../App.css'
 import { NavLink } from 'react-router';
 import { useState } from "react";
 
+const spans = {
+  color: '#2b7fff',
+  fontWeight: '700'
+}
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,17 +17,18 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
           {/* Logo */}
-          <div className="text-xl font-bold">Muhammad Awais</div>
-
+          <a href="/">
+            <div className="text-xl z-10 font-bold">MAwais<span style={spans}>Toor</span></div>
+          </a>  
           {/* Desktop Nav */}
           <div className="hidden lg:flex flex-1 justify-center">
             <ul className="flex space-x-4 bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 items-center">
               <li><a href="#home" className="text-white">Home</a></li>
               <li><a href="#about" className="text-white">About</a></li>
               <li><a href="#skills" className="text-white">Skills</a></li>
-              <li><a href="/project" className="text-white">Experience</a></li>
-              <li><a href="/services" className="text-white">Projects</a></li>
-              <li><a href="#contact" className="text-white">Education</a></li>
+              <li><a href="#experience" className="text-white">Experience</a></li>
+              <li><a href="#projects" className="text-white">Projects</a></li>
+              <li><a href="#education" className="text-white">Education</a></li>
               <li><a href="#contact" className="text-white">Contact</a></li>
             </ul>
           </div>
@@ -32,9 +37,9 @@ export default function Navbar() {
           <div className="flex items-center space-x-4">
             {/* Social Icons */}
             <div className="hidden lg:flex space-x-4 text-xl items-center">
-              <a href="#"><img src="/facebook.svg" className="w-5 h-5" /></a>
-              <a href="#"><img src="/linkedin.svg" className="w-5 h-5" /></a>
-              <a href="#"><img src="/github.svg" className="w-5 h-5" /></a>
+              <a href="#" target='_blank'><img src="/svgs/facebook.svg" className="w-5 h-5" /></a>
+              <a href="https://www.linkedin.com/in/mawaistoor" target='_blank'><img src="/svgs/linkedin.svg" className="w-5 h-5" /></a>
+              <a href="https://github.com/MAwais-Toor" target='_blank'><img src="/svgs/github.svg" className="w-5 h-5" /></a>
             </div>
 
             {/* Mobile Toggle */}
@@ -78,18 +83,18 @@ export default function Navbar() {
           <ul className="flex flex-col space-y-4 text-lg">
             <li><a href="#home" onClick={() => setIsOpen(false)}>Home</a></li>
             <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
-            <li><a href="#about" onClick={() => setIsOpen(false)}>Skills</a></li>
-            <li><a href="#about" onClick={() => setIsOpen(false)}>Experience</a></li>
+            <li><a href="#skills" onClick={() => setIsOpen(false)}>Skills</a></li>
+            <li><a href="#experience" onClick={() => setIsOpen(false)}>Experience</a></li>
             <li><a href="#project" onClick={() => setIsOpen(false)}>Projects</a></li>
-            <li><a href="#services" onClick={() => setIsOpen(false)}>Education</a></li>
+            <li><a href="#education" onClick={() => setIsOpen(false)}>Education</a></li>
             <li><a href="#contact" onClick={() => setIsOpen(false)}>Contact</a></li>
           </ul>
 
           {/* Social Icons in Sidebar */}
           <div className="mt-auto pt-6 border-t border-white/20 flex space-x-4 text-xl">
-            <a href="#"><img src="/facebook.svg" className="w-5 h-5" /></a>
-            <a href="#"><img src="/linkedin.svg" className="w-5 h-5" /></a>
-            <a href="#"><img src="/github.svg" className="w-5 h-5" /></a>
+            <a href="#" target='_blank'><img src="/svgs/facebook.svg" className="w-5 h-5" /></a>
+            <a href="https://www.linkedin.com/in/mawaistoor" target='_blank'><img src="/svgs/linkedin.svg" className="w-5 h-5" /></a>
+            <a href="https://github.com/MAwais-Toor" target='_blank'><img src="/svgs/github.svg" className="w-5 h-5" /></a>
           </div>
         </div>
       </div>

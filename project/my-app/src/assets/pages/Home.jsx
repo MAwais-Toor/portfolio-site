@@ -1,4 +1,6 @@
 import React from 'react'
+import { ReactTyped } from "react-typed";
+
 import '../../App.css';
 
 const Home = () => {
@@ -6,30 +8,46 @@ const Home = () => {
   return (
     <>
       {/* Hero Content */}
-      <section id='home' className="bg text-gray-400 bg-gray-900 body-font">
+      <section id="home" className="bg bg-gray-900 text-gray-400 body-font">
         <div className="container mx-auto flex w-[80%] px-5 py-24 items-center justify-center flex-col">
           <div className="text-center lg:w-2/3 w-full">
-            <p className="leading-relaxed mb-8">Hi there! I'm</p>
-            <h1 className="title-font sm:text-5 xl text-3xl mb-4 font-medium text-white">Muhammad Awais, a Full Stack Web developer based in Faisalabad, Pakistan</h1>
-            <h3 className="leading-relaxed mb-8">I am a Full Stack Web Developer with expertise in building responsive, high-performing websites and web applications.</h3>
+            <p className="leading-relaxed mb-4 text-lg">Hi there! I'm</p>
+            <h1 className="title-font text-3xl sm:text-5xl font-medium text-white mb-4">
+              <ReactTyped
+                strings={[
+                  "Muhammad Awais",
+                  "Web Developer",
+                  "MERN Stack Developer",
+                ]}
+                typeSpeed={100}
+                backSpeed={30}
+                loop
+              />
+            </h1>
+            <h3 className="leading-relaxed mb-8 text-xl">
+              I specialize in building responsive, high-performing websites and web applications.
+            </h3>
             <div className="flex justify-center">
               <button className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Button</button>
-              <button className="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg">Button</button>
+
             </div>
+
           </div>
         </div>
       </section>
 
-{/* About section */}
+
+      {/* About section */}
 
       <section id='about' className="text-gray-400 bg-gray-900 body-font">
-        
+
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-10">
-            <img className="object-cover object-center rounded" alt="hero" src="./about.png" />
+            <img className="object-cover object-center rounded" alt="hero" src="./images/about.png" />
           </div>
           <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
             <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Before they sold out
+
               <br className="hidden lg:inline-block" />readymade gluten
             </h1>
             <p className="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
@@ -42,32 +60,7 @@ const Home = () => {
       </section>
 
 
-{/* content */}
-      <section className="text-gray-400 bg-gray-900 body-font">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-wrap -m-4 text-center">
-            <div className="p-4 sm:w-1/4 w-1/2">
-              <h2 className="title-font font-medium sm:text-4xl text-3xl text-white">2.7K</h2>
-              <p className="leading-relaxed">Users</p>
-            </div>
-            <div className="p-4 sm:w-1/4 w-1/2">
-              <h2 className="title-font font-medium sm:text-4xl text-3xl text-white">1.8K</h2>
-              <p className="leading-relaxed">Subscribes</p>
-            </div>
-            <div className="p-4 sm:w-1/4 w-1/2">
-              <h2 className="title-font font-medium sm:text-4xl text-3xl text-white">35</h2>
-              <p className="leading-relaxed">Downloads</p>
-            </div>
-            <div className="p-4 sm:w-1/4 w-1/2">
-              <h2 className="title-font font-medium sm:text-4xl text-3xl text-white">4</h2>
-              <p className="leading-relaxed">Products</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* content2 */}
+      {/* content here */}
       <section className="text-gray-400 bg-gray-900 body-font">
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
           <div className="flex flex-col text-center w-full mb-20">
@@ -143,8 +136,122 @@ const Home = () => {
       </section>
 
 
-      {/* services */}
-      <section className="text-gray-400 body-font bg-gray-900">
+
+      {/* Skills */}
+      <div id='skills' className="container mx-auto px-4 py-12 text-gray-400 body-font bg-gray-900">
+        {/* Heading and Description */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <h1 className="text-4xl font-bold text-white mb-4">Skills</h1>
+          <p className="text-gray-300 text-base">
+            Here are some of my skills on which I have been working on for the past 2 years.
+          </p>
+        </div>
+        {/* boxes */}
+        <div className="flex flex-col items-center gap-10">
+          {/* Top Two Boxes */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Frontend */}
+            <div className="border border-blue-500 rounded-xl p-6 box-shadow">
+              <h2 className="text-2xl font-semibold text-center mb-4">Frontend</h2>
+              <div className="flex flex-wrap justify-center gap-4 items-center">
+                <div className="tech-item flex gap-2 items-center"><img src='./svgs/react.svg' width={"20px"}/> React Js</div>
+                <div className="tech-item flex gap-2 items-center"><img src='./svgs/html.svg' width={"20px"}/> HTML</div>
+                <div className="tech-item flex gap-2 items-center"><img src='./svgs/css.svg' width={"15px"}/> CSS</div>
+                <div className="tech-item flex gap-2 items-center"><img src='./svgs/js.svg' width={"20px"}/> JavaScript</div>
+                <div className="tech-item flex gap-2 items-center"><img src='./svgs/Bootstrap_logo.svg' width={"20px"}/> Bootstrap</div>
+                <div className="tech-item flex gap-2 items-center"><img className='rounded' src='./img_icons/tailwind.jpg' width={"20px"}/> Tailwind css</div>
+              </div>
+            </div>
+            {/* Backend */}
+            <div className="border border-blue-500 rounded-xl p-6 box-shadow">
+              <h2 className="text-2xl font-semibold text-center mb-4">Backend</h2>
+              <div className="flex flex-wrap justify-center gap-4">
+                <div className="tech-item flex gap-2 items-center"><img className='rounded' src='./img_icons/node.png' width={"20px"}/> Node Js</div>
+                <div className="tech-item flex gap-2 items-center"><img className='rounded' src='./img_icons/express.png' width={"20px"}/> Express Js</div>
+                <div className="tech-item flex gap-2 items-center"><img src='./svgs/mysql-logo.svg' width={"25px"}/> MySQL</div>
+                <div className="tech-item flex gap-2 items-center"><img className='rounded' src='./img_icons/mongodb.png' width={"20px"}/> MongoDB</div>
+              </div>
+            </div>
+          </div>
+          {/* Others (Centered) */}
+          <div className="border border-blue-500 rounded-xl p-6 box-shadow w-full md:w-2/3 lg:w-1/2">
+            <h2 className="text-2xl font-semibold text-center mb-4">Others</h2>
+            <div className="flex flex-wrap justify-center gap-4">
+                <div className="tech-item flex gap-2 items-center"><img className='rounded' src='./img_icons/git.jpg' width={"20px"}/> Git</div>
+                <div className="tech-item flex gap-2 items-center"><img src='./svgs/github.svg' width={"20px"}/> GitHub</div>
+                <div className="tech-item flex gap-2 items-center"><img className='rounded' src='./img_icons/netlify.png' width={"20px"}/> Netlify</div>
+                <div className="tech-item flex gap-2 items-center"><img src='./img_icons/vercel.png' width={"20px"}/> Vercel</div>
+                <div className="tech-item flex gap-2 items-center"><img className='rounded-3xl' src='./img_icons/postman.png' width={"20px"}/> Postman</div>
+                <div className="tech-item flex gap-2 items-center"><img className='rounded' src='./img_icons/vs-code.png' width={"20px"}/> VS Code</div>
+                <div className="tech-item flex gap-2 items-center"><img className='rounded' src='./img_icons/adobe.jpg' width={"20px"}/> Adobe Dreamweaver</div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Experience */}
+
+      <section id='experience' className="text-gray-400 bg-gray-900 body-font">
+        <div className="container px-5 py-24 mx-auto">
+          <h1 className="text-3xl font-medium title-font text-white mb-12 text-center">Experience</h1>
+          <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-800 sm:flex-row flex-col">
+            <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full text-blue-400 bg-gray-800 flex-shrink-0">
+              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="sm:w-16 sm:h-16 w-10 h-10" viewBox="0 0 24 24">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+            </div>
+            <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+              <h2 className="text-white text-lg title-font font-medium mb-2">Shooting Stars</h2>
+              <p className="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+              <a className="mt-3 text-blue-400 inline-flex items-center">Learn More
+                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-800 sm:flex-row flex-col">
+            <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+              <h2 className="text-white text-lg title-font font-medium mb-2">The Catalyzer</h2>
+              <p className="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+              <a className="mt-3 text-blue-400 inline-flex items-center">Learn More
+                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+            <div className="sm:w-32 order-first sm:order-none sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full text-blue-400 bg-gray-800 flex-shrink-0">
+              <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="w-10 h-10 sm:w-16 sm:h-16 text-green-600" viewBox="0 0 24 24">
+        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+        <polyline points="17 6 23 6 23 12"></polyline>
+      </svg>
+            </div>
+          </div>
+          <div className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
+            <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full text-blue-400 bg-gray-800 flex-shrink-0">
+              <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 sm:w-16 sm:h-16 text-indigo-600" viewBox="0 0 24 24">
+                <path d="M2 7h20v14H2z"></path>
+                <path d="M16 3h-8v4h8V3z"></path>
+                <path d="M2 11h20"></path>
+              </svg>
+            </div>
+            <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+              <h2 className="text-white text-lg title-font font-medium mb-2">The 400 Blows</h2>
+              <p className="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+              <a className="mt-3 text-blue-400 inline-flex items-center">Learn More
+                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <button className="flex mx-auto mt-20 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Button</button>
+        </div>
+      </section>
+
+      {/* Project */}
+      <section id='projects' className="text-gray-400 body-font bg-gray-900">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap w-full mb-20">
             <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
@@ -156,7 +263,7 @@ const Home = () => {
           <div className="flex flex-wrap -m-4">
             <div className="xl:w-1/4 md:w-1/2 p-4">
               <div className="bg-gray-800 bg-opacity-40 p-6 rounded-lg">
-                <img className="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/720x400" alt="content" />
+                <img className="h-40 rounded w-full object-cover object-center mb-6" src="./instagram.png" alt="content" />
                 <h3 className="tracking-widest text-blue-400 text-xs font-medium title-font">SUBTITLE</h3>
                 <h2 className="text-lg text-white font-medium title-font mb-4">Chichen Itza</h2>
                 <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
@@ -191,84 +298,87 @@ const Home = () => {
       </section>
 
 
+      {/* Education */}
 
-
-      {/* project */}
-
-      <section className="text-gray-400 bg-gray-900 body-font">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-20">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Master Cleanse Reliac Heirloom</h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom.</p>
+      <section id='education' className="text-gray-400 bg-gray-900 body-font">
+        <h1 className="text-3xl font-medium title-font text-white mb-12 text-center">Education</h1>
+        <p className='text-center'> A chronological journey through my academic milestones and key educational achievements that shaped my knowledge and skills.</p>
+        <div className="container px-5 py-24 mx-auto flex flex-wrap">
+          <div className="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
+            <div className="h-full w-6 absolute inset-0 flex items-center justify-center">
+              <div className="h-full w-1 bg-gray-800 pointer-events-none" />
+            </div>
+            <div className="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-blue-500 text-white relative z-10 title-font font-medium text-sm">1</div>
+            <div className="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+              <div className="flex-shrink-0 w-24 h-24 bg-gray-800 text-blue-400 rounded-full inline-flex items-center justify-center">
+                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-12 h-12" viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                <h2 className="font-medium title-font text-white mb-1 text-xl">Matric</h2>
+                <p className="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
+              </div>
+            </div>
           </div>
-          <div className="flex flex-wrap -m-4">
-            <div className="lg:w-1/3 sm:w-1/2 p-4">
-              <div className="flex relative">
-                <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/600x600" />
-                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
-                  <h2 className="tracking-widest text-sm title-font font-medium text-blue-400 mb-1">THE SUBTITLE</h2>
-                  <h1 className="title-font text-lg font-medium text-white mb-3">Shooting Stars</h1>
-                  <p className="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                </div>
+          <div className="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
+            <div className="h-full w-6 absolute inset-0 flex items-center justify-center">
+              <div className="h-full w-1 bg-gray-800 pointer-events-none" />
+            </div>
+            <div className="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-blue-500 text-white relative z-10 title-font font-medium text-sm">2</div>
+            <div className="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+              <div className="flex-shrink-0 w-24 h-24 bg-gray-800 text-blue-400 rounded-full inline-flex items-center justify-center">
+                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-12 h-12" viewBox="0 0 24 24">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+              </div>
+              <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                <h2 className="font-medium title-font text-white mb-1 text-xl">The Catalyzer</h2>
+                <p className="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
               </div>
             </div>
-            <div className="lg:w-1/3 sm:w-1/2 p-4">
-              <div className="flex relative">
-                <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/601x361" />
-                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
-                  <h2 className="tracking-widest text-sm title-font font-medium text-blue-400 mb-1">THE SUBTITLE</h2>
-                  <h1 className="title-font text-lg font-medium text-white mb-3">The Catalyzer</h1>
-                  <p className="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                </div>
+          </div>
+          <div className="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
+            <div className="h-full w-6 absolute inset-0 flex items-center justify-center">
+              <div className="h-full w-1 bg-gray-800 pointer-events-none" />
+            </div>
+            <div className="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-blue-500 text-white relative z-10 title-font font-medium text-sm">3</div>
+            <div className="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+              <div className="flex-shrink-0 w-24 h-24 bg-gray-800 text-blue-400 rounded-full inline-flex items-center justify-center">
+                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-12 h-12" viewBox="0 0 24 24">
+                  <circle cx={12} cy={5} r={3} />
+                  <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3" />
+                </svg>
+              </div>
+              <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                <h2 className="font-medium title-font text-white mb-1 text-xl">The 400 Blows</h2>
+                <p className="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
               </div>
             </div>
-            <div className="lg:w-1/3 sm:w-1/2 p-4">
-              <div className="flex relative">
-                <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/603x363" />
-                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
-                  <h2 className="tracking-widest text-sm title-font font-medium text-blue-400 mb-1">THE SUBTITLE</h2>
-                  <h1 className="title-font text-lg font-medium text-white mb-3">The 400 Blows</h1>
-                  <p className="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                </div>
-              </div>
+          </div>
+          <div className="flex relative pb-10 sm:items-center md:w-2/3 mx-auto">
+            <div className="h-full w-6 absolute inset-0 flex items-center justify-center">
+              <div className="h-full w-1 bg-gray-800 pointer-events-none" />
             </div>
-            <div className="lg:w-1/3 sm:w-1/2 p-4">
-              <div className="flex relative">
-                <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/602x362" />
-                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
-                  <h2 className="tracking-widest text-sm title-font font-medium text-blue-400 mb-1">THE SUBTITLE</h2>
-                  <h1 className="title-font text-lg font-medium text-white mb-3">Neptune</h1>
-                  <p className="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                </div>
+            <div className="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-blue-500 text-white relative z-10 title-font font-medium text-sm">4</div>
+            <div className="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+              <div className="flex-shrink-0 w-24 h-24 bg-gray-800 text-blue-400 rounded-full inline-flex items-center justify-center">
+                <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-12 h-12" viewBox="0 0 24 24">
+                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                  <circle cx={12} cy={7} r={4} />
+                </svg>
               </div>
-            </div>
-            <div className="lg:w-1/3 sm:w-1/2 p-4">
-              <div className="flex relative">
-                <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/605x365" />
-                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
-                  <h2 className="tracking-widest text-sm title-font font-medium text-blue-400 mb-1">THE SUBTITLE</h2>
-                  <h1 className="title-font text-lg font-medium text-white mb-3">Holden Caulfield</h1>
-                  <p className="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                </div>
-              </div>
-            </div>
-            <div className="lg:w-1/3 sm:w-1/2 p-4">
-              <div className="flex relative">
-                <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/606x366" />
-                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
-                  <h2 className="tracking-widest text-sm title-font font-medium text-blue-400 mb-1">THE SUBTITLE</h2>
-                  <h1 className="title-font text-lg font-medium text-white mb-3">Alper Kamu</h1>
-                  <p className="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                </div>
+              <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                <h2 className="font-medium title-font text-white mb-1 text-xl">Neptune</h2>
+                <p className="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-
       {/* contact */}
-      <section className="text-gray-400 bg-gray-900 body-font relative">
+      <section id='contact' className="text-gray-400 bg-gray-900 body-font relative">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Contact Us</h1>
@@ -302,28 +412,11 @@ const Home = () => {
                 <p className="leading-normal my-5">49 Smith St.
                   <br />Saint Cloud, MN 56301
                 </p>
-                <span className="inline-flex">
-                  <a className="text-gray-500">
-                    <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-5 h-5" viewBox="0 0 24 24">
-                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                    </svg>
-                  </a>
-                  <a className="ml-4 text-gray-500">
-                    <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-5 h-5" viewBox="0 0 24 24">
-                      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-                    </svg>
-                  </a>
-                  <a className="ml-4 text-gray-500">
-                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-5 h-5" viewBox="0 0 24 24">
-                      <rect width={20} height={20} x={2} y={2} rx={5} ry={5} />
-                      <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
-                    </svg>
-                  </a>
-                  <a className="ml-4 text-gray-500">
-                    <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-5 h-5" viewBox="0 0 24 24">
-                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-                    </svg>
-                  </a>
+                <span className="inline-flex gap-2">
+                  <a href='#about' className="text-gray-500">About</a>
+                  <a href='#skills' className="text-gray-500">Skills</a>
+                  <a href='#education' className="text-gray-500">Education</a>
+                  <a href='#projects' className="text-gray-500">Portfolio</a>
                 </span>
               </div>
             </div>
