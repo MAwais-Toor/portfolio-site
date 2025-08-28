@@ -1,106 +1,127 @@
-import React from 'react';
-import '../../App.css'
-import { NavLink } from 'react-router';
-import { useState } from "react";
-
-const spans = {
-  color: '#2b7fff',
-  fontWeight: '700'
-}
+import React, { useState } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="navbar relative bg-cover bg-center text-white">
-      <nav className="absolute top-0 left-0 w-full z-20 backdrop-blur-md bg-white/10 border-b border-white/20">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="bg-[#081b29] text-white py-2 sm:py-2 lg:py-2 fixed top-0 left-0 right-0 z-50">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-18 h-16 flex items-center justify-between">
+        {/* Logo */}
+        <a href="#" className="flex items-center font-bold text-2xl gap-2">
+          MAwais
+        </a>
 
-          {/* Logo */}
-          <a href="/">
-            <div className="text-xl z-10 font-bold">MAwais<span style={spans}>Toor</span></div>
-          </a>  
-          {/* Desktop Nav */}
-          <div className="hidden lg:flex flex-1 justify-center">
-            <ul className="flex space-x-4 bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 items-center">
-              <li><a href="#home" className="text-white">Home</a></li>
-              <li><a href="#about" className="text-white">About</a></li>
-              <li><a href="#skills" className="text-white">Skills</a></li>
-              <li><a href="#experience" className="text-white">Experience</a></li>
-              <li><a href="#projects" className="text-white">Projects</a></li>
-              <li><a href="#education" className="text-white">Education</a></li>
-              <li><a href="#contact" className="text-white">Contact</a></li>
-            </ul>
-          </div>
+        {/* Desktop links */}
+        <ul className="hidden font-medium md:flex items-center gap-8">
+          <li>
+            <a href="#about" className="hover:text-sky-400 fw-20 transition">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#skills" className="hover:text-sky-400 transition">
+              Skills
+            </a>
+          </li>
+          <li>
+            <a href="#experience" className="hover:text-sky-400 transition">
+              Experience
+            </a>
+          </li>
+          <li>
+            <a href="#projects" className="hover:text-sky-400 transition">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="#education" className="hover:text-sky-400 transition">
+              Education
+            </a>
+          </li>
+        </ul>
 
-          {/* Right Side: Icons + Toggle */}
-          <div className="flex items-center space-x-4">
-            {/* Social Icons */}
-            <div className="hidden lg:flex space-x-4 text-xl items-center">
-              <a href="#" target='_blank'><img src="/svgs/facebook.svg" className="w-5 h-5" /></a>
-              <a href="https://www.linkedin.com/in/mawaistoor" target='_blank'><img src="/svgs/linkedin.svg" className="w-5 h-5" /></a>
-              <a href="https://github.com/MAwais-Toor" target='_blank'><img src="/svgs/github.svg" className="w-5 h-5" /></a>
-            </div>
+        {/* Desktop button */}
+        <a
+          href="https://github.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:inline-flex font-bold rounded-full border-2 border-sky-600 px-4 py-2 text-sky-500 hover:bg-sky-600 hover:text-white transition"
+        >
+          Github Profile
+        </a>
 
-            {/* Mobile Toggle */}
-            <button
-              onClick={() => setIsOpen(true)}
-              className="lg:hidden text-white focus:outline-none"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2}
-                viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
-        </div>
+        {/* Mobile toggle */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
+        >
+          {isOpen ? (
+            // Close icon
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M18 6L6 18M6 6l12 12"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          ) : (
+            // Hamburger icon
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M4 6h16M4 12h16M4 18h16"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          )}
+        </button>
       </nav>
 
-      {/* Sidebar Overlay */}
+      {/* Mobile dropdown */}
       {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/40 z-30"
-          onClick={() => setIsOpen(false)}
-        ></div>
-      )}
-
-      {/* Sidebar */}
-      <div className={`fixed top-0 right-0 w-64 h-full bg-white/10 backdrop-blur-md z-40 transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}>
-        <div className="p-6 text-white flex flex-col h-full">
-          {/* Close Button */}
-          <div className="flex justify-end mb-6">
-            <button onClick={() => setIsOpen(false)}>
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2}
-                viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-
-          {/* Nav Links */}
-          <ul className="flex flex-col space-y-4 text-lg">
-            <li><a href="#home" onClick={() => setIsOpen(false)}>Home</a></li>
-            <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
-            <li><a href="#skills" onClick={() => setIsOpen(false)}>Skills</a></li>
-            <li><a href="#experience" onClick={() => setIsOpen(false)}>Experience</a></li>
-            <li><a href="#project" onClick={() => setIsOpen(false)}>Projects</a></li>
-            <li><a href="#education" onClick={() => setIsOpen(false)}>Education</a></li>
-            <li><a href="#contact" onClick={() => setIsOpen(false)}>Contact</a></li>
+        <div className="md:hidden border-t border-white/10 bg-[#16162200] shadow-lg">
+          <ul className="flex flex-col items-center gap-4 py-6">
+            <li>
+              <a href="#about" onClick={() => setIsOpen(false)} className="hover:text-sky-400">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#skills" onClick={() => setIsOpen(false)} className="hover:text-sky-400">
+                Skills
+              </a>
+            </li>
+            <li>
+              <a href="#experience" onClick={() => setIsOpen(false)} className="hover:text-sky-400">
+                Experience
+              </a>
+            </li>
+            <li>
+              <a href="#projects" onClick={() => setIsOpen(false)} className="hover:text-sky-400">
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#education" onClick={() => setIsOpen(false)} className="hover:text-sky-400">
+                Education
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="inline-flex rounded-full border border-sky-600 px-4 py-2 text-sky-500 hover:bg-sky-600 hover:text-white transition"
+              >
+                Github Profile
+              </a>
+            </li>
           </ul>
-
-          {/* Social Icons in Sidebar */}
-          <div className="mt-auto pt-6 border-t border-white/20 flex space-x-4 text-xl">
-            <a href="#" target='_blank'><img src="/svgs/facebook.svg" className="w-5 h-5" /></a>
-            <a href="https://www.linkedin.com/in/mawaistoor" target='_blank'><img src="/svgs/linkedin.svg" className="w-5 h-5" /></a>
-            <a href="https://github.com/MAwais-Toor" target='_blank'><img src="/svgs/github.svg" className="w-5 h-5" /></a>
-          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </header>
   );
 }
-
-
-
