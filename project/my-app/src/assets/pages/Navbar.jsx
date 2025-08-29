@@ -8,7 +8,7 @@ export default function Navbar() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-18 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center font-bold text-2xl gap-2">
-          MAwais
+          Portfolio
         </a>
 
         {/* Desktop links */}
