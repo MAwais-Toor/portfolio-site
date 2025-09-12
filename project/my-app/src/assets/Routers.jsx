@@ -1,9 +1,13 @@
 import  {createBrowserRouter} from 'react-router'
-import Home from "./pages/Home"
-import About from "./pages/About"
 import App from '../App'
-import Project from './pages/Project'
-import Services from './pages/Services'
+import Home from "./pages/Home"
+import About from './pages/About'
+import Resume from './pages/Resume'
+import Portfolio from './pages/Portfolio'
+import Contact from './pages/Contact'
+
+
+
 import NotFound from './pages/Notfound'
 
 
@@ -15,6 +19,22 @@ export const Routers = createBrowserRouter([
             {
                 path: "",
                 element: <Home />
+            },
+            {
+                path: "/about",
+                element: <About />
+            },
+            {
+                path: "/resume",
+                element: <Resume />
+            },
+            {
+                path: "/portfolio",
+                element: <Portfolio />
+            },
+            {
+                path: "/contact",
+                element: <Contact />
             },
             {
                 path: "*",
