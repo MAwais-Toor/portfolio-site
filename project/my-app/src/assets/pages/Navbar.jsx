@@ -12,16 +12,13 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80">
-      <div className="container px-16 text-white mx-auto relative text-sm">
+      <div className="container px-6 text-white mx-auto relative text-sm">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
-            <img
-              className="h-10 w-10 mr-2"
-              src="https://via.placeholder.com/150"
-              alt="Logo"
-            />
-            <span className="text-xl tracking-tight">MATsHub</span>
+            <NavLink to="/">
+              <h1 className="text-xl font-bold tracking-tight">Portfolio</h1>
+            </NavLink>
           </div>
 
           {/* Desktop Nav */}
@@ -108,7 +105,7 @@ const Navbar = () => {
               href="#"
               className="bg-gradient-to-r from-blue-500 to-blue-800 font-bold py-2 px-6 rounded-md"
             >
-              Resume
+              My Resume
             </a>
           </div>
 

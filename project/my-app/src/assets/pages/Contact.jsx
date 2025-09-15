@@ -55,9 +55,9 @@ const Contact = () => {
                   <i className="bi bi-geo-alt"></i>
                 </div>
                 <div>
-                  <h4 className="font-semibold">Our Location</h4>
-                  <p>A108 Adam Street</p>
-                  <p>New York, NY 535022</p>
+                  <h4 className="font-semibold">My Location</h4>
+                  <p>RB 214, ST# 2/3 Khan Model Colony</p>
+                  <p>Faisalabad, Punjab, Pakistan</p>
                 </div>
               </div>
 
@@ -68,8 +68,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold">Phone Number</h4>
-                  <p>+1 5589 55488 55</p>
-                  <p>+1 6678 254445 41</p>
+                  <p>+92 349 2006 206</p>
+                  <p>+92 332 8061 228</p>
                 </div>
               </div>
 
@@ -80,8 +80,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold">Email Address</h4>
-                  <p>info@example.com</p>
-                  <p>contact@example.com</p>
+                  <p>muhammadawaistoor.web@gmail.com</p>
                 </div>
               </div>
             </div>
