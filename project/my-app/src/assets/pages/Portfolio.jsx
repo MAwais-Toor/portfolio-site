@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Plus, Link2 } from "lucide-react"; // ✅ lucide icons
 
 const Portfolio = () => {
   const [filter, setFilter] = useState("all");
@@ -10,7 +11,7 @@ const Portfolio = () => {
       title: "Business Growth Strategy",
       subtitle: "Strategic Planning",
       tags: ["Strategy", "Consulting"],
-      img: "assets/img/portfolio/portfolio-1.webp",
+      img: "/projects/project (1).png", // ✅ put this in public/projects
     },
     {
       id: 2,
@@ -18,7 +19,7 @@ const Portfolio = () => {
       title: "Financial Restructuring",
       subtitle: "Financial Advisory",
       tags: ["Finance", "Investment"],
-      img: "assets/img/portfolio/portfolio-2.webp",
+      img: "/projects/project-2.webp",
     },
     {
       id: 3,
@@ -26,7 +27,7 @@ const Portfolio = () => {
       title: "Supply Chain Optimization",
       subtitle: "Operations Management",
       tags: ["Operations", "Logistics"],
-      img: "assets/img/portfolio/portfolio-3.webp",
+      img: "/projects/project-3.webp",
     },
     {
       id: 4,
@@ -34,7 +35,7 @@ const Portfolio = () => {
       title: "Digital Transformation",
       subtitle: "Technology Consulting",
       tags: ["Technology", "Innovation"],
-      img: "assets/img/portfolio/portfolio-4.webp",
+      img: "/projects/project-4.webp",
     },
     {
       id: 5,
@@ -42,7 +43,7 @@ const Portfolio = () => {
       title: "Market Expansion",
       subtitle: "Strategic Planning",
       tags: ["Strategy", "Growth"],
-      img: "assets/img/portfolio/portfolio-5.webp",
+      img: "/projects/project-5.webp",
     },
     {
       id: 6,
@@ -50,7 +51,7 @@ const Portfolio = () => {
       title: "Investment Strategy",
       subtitle: "Financial Advisory",
       tags: ["Finance", "Investment"],
-      img: "assets/img/portfolio/portfolio-6.webp",
+      img: "/projects/project-6.webp",
     },
   ];
 
@@ -103,22 +104,22 @@ const Portfolio = () => {
                   alt={project.title}
                   className="w-full h-56 object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition">
+                <div className="absolute inset-0 bg-black bg-opacity-100 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition">
                   <a
                     href={project.img}
-                    className="text-white text-2xl"
+                    className="z-10 text-white hover:text-sky-400 transition"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="bi bi-plus"></i>
+                    <Plus size={28} />
                   </a>
                   <a
                     href="#"
-                    className="text-white text-2xl"
+                    className="z-10 text-white hover:text-sky-400 transition"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="bi bi-link"></i>
+                    <Link2 size={28} />
                   </a>
                 </div>
               </div>

@@ -30,21 +30,33 @@ const Resume = () => {
               <div className="space-y-8">
                 <div className="border-l-4 border-sky-400 pl-6">
                   <h4 className="text-lg font-bold">
-                    WEB DEVELOPMENT COURSE
+                    IT Specialist - Web Application Development
                   </h4>
                   <span className="block text-sm text-sky-400">2024 - 2025</span>
                   <p className="italic text-gray-400 mt-1">
                     Pearson Education Inc, London
                   </p>
                   <p className="mt-2 text-gray-400 text-sm leading-relaxed">
-                    Quia nobis sequi est occaecati aut. Repudiandae et iusto quae
-                    reiciendis et quis delectus nihil temporibus sapiente.
+                    Earners of this badge demonstrate their ability to use HTML5, CSS, and JavaScript to build responsive web applications that will run on a variety of touch-enabled devices, including PCs, tablets, and phones.
                   </p>
                   <img
                     className="w-20 rounded-lg hover:scale-105 transition-transform duration-200"
-                    src="https://cappsonline.org/wp-content/uploads/2017/01/pearson-logo.png"
+                    src="https://images.credly.com/size/340x340/images/e9bc8cbb-9a32-49ea-a2c3-ebfa2aeb7d55/ITS-Badges_HTML-5-Application-Developer_1200px.png"
                     alt=""
                   />
+                  <a className="text-sky-400 italic hover:underline" href="https://www.credly.com/badges/cea443e3-50bf-43c9-8b6a-83a3d4bdd789" target="_blank" rel="noopener noreferrer">Verified by Pearson
+                    <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="inline-block ml-1 w-4 h-4 text-sky-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </a>
                 </div>
 
                 <div className="border-l-4 border-sky-400 pl-6">
@@ -197,33 +209,79 @@ const Resume = () => {
                   </div>
                 )}
 
-                {/* Other Experience */}
-                <div className="border-l-4 border-sky-400 pl-6">
-                  <h4 className="text-lg font-bold">Front End Developer</h4>
-                  <span className="block text-sm text-sky-400">2023 - 2024</span>
+                {/* Frontend Developer */}
+                <div className="group border-l-4 border-sky-400 pl-6 pb-6 transition-all duration-500">
+                  <h4 className="text-lg font-bold">Frontend Developer</h4>
+                  <span className="block text-sm text-sky-400">
+                    2023 - 2024
+                  </span>
+
                   <div className="flex items-center mt-2">
                     <img
                       className="w-7 rounded-md mr-2 hover:scale-105 transition-transform duration-200"
-                      src="https://media.licdn.com/dms/image/v2/D4D0BAQHlD32mFKFAFA/company-logo_200_200/company-logo_200_200/0/1666870180353?e=1760572800&v=beta&t=P8aUWZi9eGJ4jsXDU_9ylnvIBt8LsdHCEG9NhjUj7t8"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkCOYPTHCcFwUf_u2avugHJu9OPryJmxWXtA&s"
                       alt=""
                     />
                     <p className="italic text-gray-400 mt-1">
                       The DevTech Professionals
                     </p>
                   </div>
+
                   <ul className="mt-2 list-disc list-inside text-sm space-y-2">
                     <li>
-                      Developed numerous marketing programs (logos, brochures,
-                      infographics, presentations, advertisements).
+                      Lead in the development, implementation, and optimization
+                      of web applications using modern technologies.
                     </li>
-                    <li>Managed up to 5 projects under pressure.</li>
-                    <li>Recommended appropriate platforms for clients.</li>
                     <li>
-                      Created 4+ design proposals monthly for clients and
-                      managers.
+                      Delegate tasks to 7 team members and provide counsel on
+                      all aspects of the project.
+                    </li>
+                    <li>
+                      Supervise assessment of all applications for quality and
+                      efficiency.
+                    </li>
+                    <li>
+                      Oversaw project budgets ranging from $2,000 - $25,000.
                     </li>
                   </ul>
+
+                  {/* Expandable Certificate */}
+                  <div className="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 ease-in-out">
+                    <div className="mt-4 flex justify-start">
+                      <img
+                        src="https://imgv2-2-f.scribdassets.com/img/document/522712645/original/db208280f2/1?v=1"
+                        alt="Certificate"
+                        className="w-32 rounded-md border border-gray-300 shadow-md cursor-pointer hover:scale-105 transition-transform duration-300"
+                        onClick={() => setShowModal(true)}
+                      />
+                    </div>
+                  </div>
                 </div>
+
+                {/* Modal for Big Screen Certificate */}
+                {showModal && (
+                  <div
+                    className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+                    onClick={() => setShowModal(false)} // close when clicking outside
+                  >
+                    <div
+                      className="relative"
+                      onClick={(e) => e.stopPropagation()} // prevent close on image click
+                    >
+                      <button
+                        className="absolute -top-6 -right-6 text-white text-3xl font-bold hover:text-red-400"
+                        onClick={() => setShowModal(false)}
+                      >
+                        &times;
+                      </button>
+                      <img
+                        src="https://imgv2-2-f.scribdassets.com/img/document/522712645/original/db208280f2/1?v=1"
+                        alt="Certificate Large"
+                        className="max-w-[90vw] max-h-[90vh] rounded-lg shadow-lg"
+                      />
+                    </div>
+                  </div>
+                )}
 
                 <div className="border-l-4 border-sky-400 pl-6">
                   <h4 className="text-lg font-bold">ASSOCIATE PROGRAM</h4>
@@ -261,6 +319,39 @@ const Resume = () => {
                       alt=""
                     />
                     <p className="italic text-gray-400 mt-1">Amazon.com</p>
+                  </div>
+                  <ul className="mt-2 list-disc list-inside text-sm space-y-2">
+                    <li>
+                      Implemented responsive websites and applications using
+                      modern JavaScript frameworks.
+                    </li>
+                    <li>
+                      Collaborated with senior developers to optimize apps.
+                    </li>
+                    <li>Participated in code reviews and documentation.</li>
+                    <li>
+                      Assisted in RESTful API and microservice development.
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="border-l-4 border-sky-400 pl-6">
+                  <h4 className="text-lg font-bold">Freelance Developer | Fiverr & Upwork</h4>
+                  <span className="block text-sm text-sky-400">2023 - Present</span>
+                  <div className="flex items-center mt-2">
+                    <img
+                      className="w-7 rounded-md mr-2 hover:scale-105 transition-transform duration-200"
+                      src="https://theaffiliatemonkey.com/wp-content/uploads/2024/07/fiverr-logo.jpeg"
+                      alt=""
+                    />
+                    <a href="https://www.fiverr.com" target="_blank" rel="noopener noreferrer" className="italic text-gray-400 mt-1 hover:underline hover:text-blue-500">Fiverr.com</a>
+                    <span className="mx-2 text-gray-500">|</span>
+                    <img
+                      className="w-7 rounded-md mr-2 hover:scale-105 transition-transform duration-200"
+                      src="https://play-lh.googleusercontent.com/PgAl0V1pWvER7X9ViFrBaT9Pxye4pRH5Nr9JlD5RbKjNX0bcMRp007dQhd17b0Y28Rwv=w240-h480-rw"
+                      alt=""
+                    />
+                    <a href="https://www.upwork.com" target="_blank" rel="noopener noreferrer" className="italic text-gray-400 mt-1 hover:underline hover:text-blue-500">Upwork.com</a>
                   </div>
                   <ul className="mt-2 list-disc list-inside text-sm space-y-2">
                     <li>

@@ -1,4 +1,6 @@
 import React from 'react'
+import { NavLink } from 'react-router'
+import DownloadResume from './DownloadResume'
 
 const About = () => {
   return (
@@ -10,35 +12,36 @@ const About = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-sky-400">About</h2>
             <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-              Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit.
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam
+              
             </p>
           </div>
           {/* Intro + Photo */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-            <div>
-              <span className="uppercase tracking-wide text-sky-300 font-semibold">Hello there</span>
-              <h2 className="text-3xl sm:text-4xl font-bold mt-3 text-white">
-                Hi, I'm Brandon – a calm-minded creative developer crafting serene digital journeys
-              </h2>
-              <p className="mt-4 text-gray-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus.
-              </p>
-              <p className="mt-3 text-gray-400">
-                Integer posuere lacus in mi fringilla, eget luctus risus pulvinar. Curabitur a arcu a nisl tempus sagittis.
-              </p>
-              <div className="mt-6 flex gap-6">
-                <a href="#portfolio" className="px-5 py-3 border border-sky-400 text-sky-400 rounded-lg hover:bg-sky-400 hover:text-[#0d1b2a] transition">
-                  View My Work →
-                </a>
-                <a href="#" className="underline text-sky-400 hover:text-sky-300">Download Resume ↓</a>
-              </div>
-            </div>
-            <div className="flex justify-center lg:justify-end">
-              <img src="assets/img/profile/profile-square-11.webp" alt="Portrait" className="w-64 h-64 rounded-xl shadow-lg object-cover" />
-            </div>
-          </div>
-          {/* Skills Grid */}
+                <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                  <span className="uppercase tracking-wide text-sky-300 font-semibold">Hello there</span>
+                  <h2 className="text-3xl sm:text-4xl font-md mt-3 text-white">
+                  Hi, I'm Muhammad Awais – a calm-minded creative developer crafting serene digital journeys
+                  </h2>
+                  <p className="mt-4 text-gray-400">
+                  Motivated Web Developer with 2 years of experience in creating responsive and user-friendly websites. Skilled in front-end and back-end development, with additional expertise in Affiliate Marketing and basic Graphic Design. Passionate about delivering innovative digital solutions, enhancing online presence, and supporting business growth through technology and creativity.
+                  </p>
+                  <div className="mt-6 flex items-center gap-6">
+                  <NavLink to="/portfolio" className="px-5 py-3 border border-sky-400 text-sky-400 rounded-lg hover:bg-sky-400 hover:text-[#0d1b2a] transition">
+                    View My Work →
+                  </NavLink>
+                  <DownloadResume />
+                  </div>
+                </div>
+                <div className="flex justify-center lg:justify-end">
+                  <img
+                  src="./about.png"
+                  alt="Portrait"
+                  className="w-70 h-70 rounded-xl shadow-lg object-cover"
+                  style={{ transform: "scaleX(-1)" }}
+                  />
+                </div>
+                </div>
+                {/* Skills Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             <div className="bg-[#1b263b] p-6 rounded-xl text-center hover:-translate-y-1 transition">
               <i className="bi bi-layout-text-window text-sky-400 text-3xl" />
